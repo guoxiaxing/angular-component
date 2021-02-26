@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>Welcome to {{ title }}!</h1>
+  <h2>app-image-viewer-mask</h2>
+  <app-image-viewer-mask
+    *ngIf="previewImage"
+    [imageUrl]="imageUrl"
+    (close)="onCloseView()"
+  ></app-image-viewer-mask>
+  <a href="#" (click)="preview()">点击预览图片</a>
+</div>

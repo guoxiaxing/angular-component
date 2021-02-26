@@ -1,0 +1,24 @@
+<ng-container *ngIf="imageUrl">
+    <div
+        class="fullscreen-container"
+        [class.fullscreen-fadeIn]="imageUrl != null"
+        [class.fullscreen-fadeOut]="vanish"
+    >
+        <div class="fullscreen-mask"></div>
+        <div class="fullscreen-viewer">
+            <div class="viewer-header">
+                <div><i class="fa fa-times fa-4x header-close" (click)="closeViewer()"></i></div>
+            </div>
+            <div class="viewer-body" [class.with-footer]="imageUrl">
+
+                <div class="view-section">
+                    <img
+                        [src]="imageUrl"
+                        (load)="resolveRatio($event)"
+                        (click)="openWindow()"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
